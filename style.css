@@ -1,0 +1,193 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* Ensures no scrolling */
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #d1d1d1, #f5f5f5, #e3e3e3, #f5f5f5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+h2,
+p {
+  margin: 0 0 20px 0;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 2px solid #000; /* Black border */
+  border-radius: 4px;
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.btn {
+  background-color: #000; /* Black button */
+  color: #fff; /* White text */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #fff; /* White button */
+  color: #000; /* Black text */
+  border: 2px solid #000; /* Black border */
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.message {
+  font-size: 0.8em;
+}
+
+.message span {
+  display: block; /* Each condition on a new line */
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.message span.error {
+  color: red;
+}
+
+.message span.success {
+  color: green;
+}
+
+.message span::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+}
+
+.message span.error::before {
+  content: "✖";
+  color: red;
+  margin-right: 5px;
+}
+
+.message span.success::before {
+  content: "✓";
+  color: green;
+  margin-right: 5px;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.toggle-buttons button {
+  background-color: #ffd333; /* Button background */
+  color: #3c454d; /* Text color */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.toggle-buttons button:hover,
+.toggle-buttons button:focus {
+  background-color: #ffdd55; /* Lighter shade for hover */
+  transform: translateY(-2px); /* Slight raise on hover */
+}
+
+.toggle-buttons button:active {
+  transform: translateY(1px); /* Simulate button press */
+}
+.login-container,
+.register-container {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.form-container {
+  position: relative;
+  /* Other styling */
+}
+.form-container.active {
+  opacity: 1;
+}
+
+.toggle-buttons {
+  position: absolute;
+  top: -40px; /* Half of the button's height */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.toggle-buttons button {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 15px; /* Optional, for spacing between buttons */
+}
+
+.toggle-buttons button:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+.toggle-buttons button.active {
+  border-color: #3c454d;
+  color: #3c454d;
+}
